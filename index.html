@@ -39,6 +39,7 @@
     <script>
         const { createElement } = React;
         const allNews = [
+            { id: 18, title: "نادية النشار ووائل عيسى يستعرضان إنجازات الفراعنة بأمم إفريقيا وقصة كفاح لتجاوز أزمات العمل ببرنامج «Lifestyle»", program: "Lifestyle", image: "https://www.emaratalyoum.com/polopoly_fs/1.1336547.1587202967!/image/image.jpeg", time: "15 يوليو 2026 - 09:50 م", link: "https://lifestyle-indol.vercel.app" },
             { id: 17, title: "علاء صلاح يكشف أسرار اختبار MBTI وأنماط الشخصيات لتحقيق النجاح ببرنامج «للسعادة طاقة»", program: "للسعادة طاقة", image: "https://i.postimg.cc/wvLnVJRf/anwaʿ-alshkhsyat-fy-ʿlm-alnfs.jpg", time: "15 يوليو 2026 - 08:30 م", link: "https://sa3ada.vercel.app" },
             { id: 16, title: "راندا فاروق تستعرض تفاصيل فيلم «فرقة الموت» وأحدث الأخبار والمهرجانات الفنية", program: "108 فن", image: "https://i.postimg.cc/3xsdBY2g/images-(6).jpg", time: "15 يوليو 2026 - 10:15 ص", link: "https://randafarouk.vercel.app/" },
             { id: 15, title: "محمد عادل يكشف أسلحة توخيل لإسقاط الأرجنتين وسر اعتماد سكالوني على ميسي بنصف نهائي المونديال", program: "صباحكم رياضة", image: "https://i.postimg.cc/vBGCFx5J/hq720.jpg", time: "15 يوليو 2026 - 10:05 ص", link: "https://mohamedadel-ecru.vercel.app/" },
@@ -141,7 +142,7 @@
                                 createElement('div', { className: 'text-[9px] text-gray-400 mt-0.5' }, news.time)
                             )
                         ),
-                        index === 2 ? createElement(WeatherSeparator) : null
+                        index === 3 ? createElement(WeatherSeparator) : null
                     ))
                 ),
                 createElement('footer', { className: 'bg-blue-950 text-white text-center p-4 text-[10px] border-t-4 border-red-600' },
