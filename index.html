@@ -135,7 +135,7 @@
                     allNews.map((news, index) => createElement('div', { key: news.id },
                         createElement('div', { onClick: () => window.open(news.link, '_blank'), className: 'bg-white p-3 rounded-2xl mb-3 shadow-sm border-r-4 border-red-600 flex items-center gap-3 active-scale cursor-pointer' },
                             createElement('div', { className: 'relative p-0.5 rounded-full animate-red-ring-pulse' },
-                                createElement('img', { src: news.image, className: 'w-14 h-14 rounded-full object-cover' })
+                                createElement('img', { src: news.image, className: 'w-14 h-14 rounded-full object-cover', onError: (e) => e.target.src = 'https://i.postimg.cc/52svkRM4/6291d82b7e312.jpg' })
                             ),
                             createElement('div', { className: 'flex-1 overflow-hidden' },
                                 createElement('div', { className: 'flex items-center gap-1.5 mb-0.5' },
@@ -160,3 +160,4 @@
 </body>
 </html>
 
+```
