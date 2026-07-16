@@ -33,6 +33,8 @@
         .animate-elegant-pulse { animation: elegant-pulse 2s infinite ease-in-out; }
         @keyframes weather-pulse { 0%, 100% { box-shadow: 0 0 5px #7dd3fc; border-color: #7dd3fc; } 50% { box-shadow: 0 0 15px #0ea5e9; border-color: #0ea5e9; } }
         .animate-weather-pulse { animation: weather-pulse 2.5s infinite ease-in-out; }
+        @keyframes mic-glow { 0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.3); } 50% { box-shadow: 0 0 8px 3px rgba(220, 38, 38, 0.4); } }
+        .animate-mic-glow { animation: mic-glow 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -104,7 +106,7 @@
                 className: 'mx-3 my-4 bg-white rounded-2xl border border-gray-200 shadow-sm p-3 flex items-center justify-between active:scale-[0.98] transition-transform'
             },
                 createElement('div', { className: 'flex items-center gap-3' },
-                    createElement('div', { className: 'w-12 h-12 bg-green-100 rounded-full flex items-center justify-center' },
+                    createElement('div', { className: 'w-12 h-12 bg-green-100 rounded-full flex items-center justify-center animate-mic-glow' },
                         createElement('span', { className: 'text-2xl' }, '🎙️')
                     ),
                     createElement('div', { className: 'flex flex-col' },
