@@ -1,4 +1,4 @@
-
+```
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -19,8 +19,6 @@
         .animate-soft-pulse { animation: soft-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
         @keyframes halo-pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5); } 70% { transform: scale(1.1); box-shadow: 0 0 0 10px rgba(255, 255, 255, 0); } 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); } }
         .animate-halo-pulse { animation: halo-pulse 2s infinite; }
-        @keyframes mic-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-        .animate-mic-blink { animation: mic-blink 1s ease-in-out infinite; }
         @keyframes play-blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.2; } }
         .animate-play-blink { animation: play-blink 1.5s ease-in-out infinite; }
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
@@ -28,8 +26,12 @@
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
         .animate-float { animation: float 4s ease-in-out infinite; }
         .active-scale:active { transform: scale(0.95); transition: 0.1s; }
-        @keyframes live-pulse { 0% { opacity: 1; } 50% { opacity: 0.3; } 100% { opacity: 1; } }
-        .animate-live-pulse { animation: live-pulse 1.5s ease-in-out infinite; }
+        @keyframes fade-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+        .animate-fade-pulse { animation: fade-pulse 1s infinite; }
+        @keyframes sun-flicker { 0%, 100% { filter: drop-shadow(0 0 5px #fbbf24); transform: scale(1); } 50% { filter: drop-shadow(0 0 15px #f59e0b); transform: scale(1.05); } }
+        .animate-sun-flicker { animation: sun-flicker 1.5s infinite; }
+        @keyframes cloud-drift { 0% { transform: translateX(-5px); } 50% { transform: translateX(5px); } 100% { transform: translateX(-5px); } }
+        .animate-cloud-drift { animation: cloud-drift 3s infinite ease-in-out; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -39,6 +41,13 @@
     <script>
         const { createElement } = React;
         const allNews = [
+            { id: 28, title: "أحمد عوض يوضح عبر «ربيع القلوب» أهمية استثمار الوقت ويحذر من التسويف", program: "ربيع القلوب", image: "https://i.postimg.cc/bvDdvBY8/hq720-(1).jpg", time: "16 يوليو 2026 - 04:15 ص", link: "https://kloob-tawny.vercel.app" },
+            { id: 27, title: "خالد عبد اللطيف يستعرض مسيرة ابن منظور وابن هشام ببرنامج «الموسوعة المسموعة»", program: "الموسوعة المسموعة", image: "https://i.postimg.cc/wTyXS0JV/images-(9).jpg", time: "16 يوليو 2026 - 04:10 ص", link: "https://mowso3a.vercel.app" },
+            { id: 26, title: "الأباصيري يستعرض ابتكار طلاء يبرد المنازل ويجمع المياه وأسرار رواتب رواد الفضاء ببرنامج «راديو تويت»", program: "راديو تويت", image: "https://i.postimg.cc/MZhMjxMd/images-(8).jpg", time: "16 يوليو 2026 - 04:00 ص", link: "https://radiotweet-chi.vercel.app" },
+            { id: 25, title: "محمد رضا الفقي يحذر عبر «واو وعي» من خطورة الشجارات الزوجية أمام الأطفال", program: "واو وعي", image: "https://i.postimg.cc/jdgH1BLW/images-(7).jpg", time: "16 يوليو 2026 - 03:30 ص", link: "https://feky.vercel.app" },
+            { id: 24, title: "شيماء عبد الوهاب تناقش التخلص من العلاقات السامة والتسويف ببرنامج «مع السهرانين»", program: "مع السهرانين", image: "https://i.postimg.cc/brVCYrNg/Screenshot-2026-07-16-02-56-56-57-680d03679600f7af0b4c700c6b270fe7.jpg", time: "16 يوليو 2026 - 03:00 ص", link: "https://ma3asahraneen.vercel.app" },
+            { id: 23, title: "حنان حسين تكشف لـ «بنات أفكاري» أسباب تراجع اللغة العربية وتحذر من زيف السوشيال ميديا", program: "بنات أفكاري", image: "https://i.postimg.cc/hGhGh3r7/00-2-1734526221.jpg", time: "16 يوليو 2026 - 02:50 ص", link: "https://banaatafkary.vercel.app" },
+            { id: 22, title: "إسلام نبيل يسخر من محتوى «التريند» المفرغ وفيديوهات المؤثرين ببرنامج «كوميكس»", program: "كوميكس", image: "https://images.copts-united.com/uploads/4082/77_20200505175013.jpg", time: "16 يوليو 2026 - 02:20 ص", link: "https://trend2-three.vercel.app" },
             { id: 21, title: "عمر هشام وعماد غنيم يحللان لـ «إنسايد استوديو» أسباب خروج الفراعنة وسر تفوق إسبانيا وفرص إنجلترا بالمونديال", program: "إنسايد استوديو", image: "https://i.postimg.cc/XJYjCBLt/sddefault.jpg", time: "16 يوليو 2026 - 12:35 ص", link: "https://omarhesham.vercel.app" },
             { id: 20, title: "حنان رمسيس تكشف لـ «المؤشر» أسباب القفزة التاريخية للاحتياطي النقدي وتحذر من فخ العملات المشفرة", program: "المؤشر", image: "https://mediaaws-live.almasryalyoum.com/AMAYLivePictures/portalimages/news/large/2023/08/16/2176174_0.jpeg", time: "16 يوليو 2026 - 12:10 ص", link: "https://hananramsis.vercel.app" },
             { id: 19, title: "انتصار غريب تكشف كواليس تشكيل الوفد المصري وثورة 19 وموقف سعد زغلول من الأقباط ببرنامج «قول يا تاريخ»", program: "قول يا تاريخ", image: "https://www.cairo24.com/UploadCache/libfiles/70/1/600x338o/544.jpg", time: "15 يوليو 2026 - 11:55 م", link: "https://qoolyatarikh.vercel.app" },
@@ -54,26 +63,20 @@
             { id: 9, title: "مروة عادل: قانون الخدمة المدنية يحدد واجبات الموظف.. والعمل التطوعي للزملاء يحمل صاحبه المسؤولية", program: "واو وعي", image: "https://i.postimg.cc/02f83HVp/17612478700.jpg", time: "15 يوليو 2026 - 04:00 ص", link: "https://marwaadel.vercel.app/" },
             { id: 8, title: "«راديو Tweet» يستعرض تأثير العواصف الشمسية وتاريخ بورصة القطن ومكاسب العرب بالمونديال", program: "راديو Tweet", image: "https://i.postimg.cc/B6VFxnK0/208363.jpg", time: "15 يوليو 2026 - 03:00 ص", link: "https://radiotweet.vercel.app/" },
             { id: 7, title: "«مع السهرانين» يواصل مناقشة تقلبات المزاج.. ومستمعون يشاركون تجاربهم الإنسانية المؤثرة", program: "مع السهرانين", image: "https://i.postimg.cc/rszng3bx/123132-shr.jpg", time: "15 يوليو 2026 - 02:40 ص", link: "https://ma3asahranin.vercel.app/" },
-            { id: 6, title: "ولاء العبد: هناك فجوة واضحة بين المناهج وسوق العمل.. والتوأمة الإجبارية هي الحل", program: "الرياضة في أروقة الجامعة", image: "https://i.postimg.cc/VvNBmtBn/61Hh8cw-Qo-YL-AC-UF1000-1000-QL80.jpg", time: "15 يوليو 2026 - 02:00 ص", link: "https://walaaelabd.vercel.app/" },
-            { id: 5, title: "سلوى حسن: الغناء الأوبراي يستهلك العمر والاستقلال المادي يمنح المرأة استقرارا نفسيا", program: "كلمة حب", image: "https://i.postimg.cc/3wr1rzBx/images.jpg", time: "15 يوليو 2026 - 01:20 ص", link: "https://salwahassan.vercel.app/" },
-            { id: 4, title: "محمد علاء: هجوم فرنسا يصطدم باستحواذ إسبانيا ومخاوف من التحكيم بنصف نهائي المونديال", program: "استوديو المونديال", image: "https://i.ytimg.com/vi/nDhdzAZqxyk/hq720.jpg", time: "15 يوليو 2026 - 12:30 ص", link: "https://mondialstudio.vercel.app/" },
-            { id: 3, title: "نادية النشار: الرياضة تقضي على آفة النميمة والقميص رقم 10 يمثل أساطير كرة القدم", program: "لايف ستايل", image: "https://png.pngtree.com/png-vector/20230913/ourlarge/pngtree-football-shirt-with-number-10-team-sports-white-png-image_9241588.png", time: "14 يوليو 2026 - 09:20 م", link: "https://nwes1.vercel.app/" },
-            { id: 2, title: "مصطفى مارين: فرنسا والأرجنتين بنهائي المونديال وميسي يتفوق على مبابي", program: "90 دقيقة كورة", image: "https://gate.ahram.org.eg/daily/Media/News/2018/12/6/2018-636797308630769972-76.jpg", time: "14 يوليو 2026 - 04:50 م", link: "https://mostafa-maren.vercel.app/" },
-            { id: 1, title: "مطور أداء منتخب كينيا: إنجلترا ستقصي الأرجنتين واللياقة البدنية حرمت الفراعنة من إنجاز تاريخي", program: "90 دقيقة كورة", image: "https://www.maspero.eg/image/750/450/2026/06/17812146460.jpg", time: "14 يوليو 2026 - 04:30 م", link: "https://news2-iota.vercel.app/" },
-            { id: 0, title: "108 فن: شمس الزناتي يعود للسينما ومصطفى كامل يطرح أغنيته الجديدة", program: "108 فن", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2xMIiplDqHgY1Shn6qbCaDnn7dL15Qg6Idb436e-9E-GH7-Br0vteJ5zo&s=10", time: "14 يوليو 2026 - 11:15 ص", link: "https://fan-pied.vercel.app/" }
+            { id: 6, title: "ولاء العبد: هناك فجوة واضحة بين المناهج وسوق العمل.. والتوأمة الإجبارية هي الحل", program: "الرياضة في أروقة الجامعة", image: "https://i.postimg.cc/VvNBmtBn/61Hh8cw-Qo-YL-AC-UF1000-1000-QL80.jpg", time: "15 يوليو 2026 - 02:00 ص", link: "https://walaaelabd.vercel.app/" }
         ];
 
         function WeatherSeparator() {
-            return createElement('div', { className: 'bg-gradient-to-br from-blue-900 to-indigo-950 mx-3 my-4 p-4 rounded-2xl shadow-lg flex items-center justify-between border border-indigo-700 overflow-hidden relative animate-border-glow' },
+            return createElement('div', { className: 'bg-gradient-to-br from-sky-500 to-blue-700 mx-3 my-4 p-4 rounded-2xl shadow-lg flex items-center justify-between border border-blue-400 overflow-hidden relative animate-border-glow' },
                 createElement('div', { className: 'text-white relative z-10' },
                     createElement('div', { className: 'text-[10px] opacity-80' }, 'الطقس الآن'),
                     createElement('div', { className: 'text-2xl font-black mt-0.5' }, '24°')
                 ),
                 createElement('div', { className: 'relative w-24 h-16 flex items-center justify-center' },
-                    createElement('div', { className: 'text-4xl absolute left-2 top-0 z-10' }, '🌙'),
-                    createElement('svg', { className: 'w-8 h-8 text-white/50 absolute bottom-1 right-5 animate-float z-0', fill: 'currentColor', viewBox: '0 0 24 24' }, createElement('path', { d: 'M19 13.1c-.1 0-.3.1-.4.1-1.7 0-3-1.3-3-3 0-1.7 1.3-3 3-3 .1 0 .3 0 .4.1.7-2.6-1.5-4.7-4.1-4.7-1.7 0-3.3.9-4.1 2.3-.3-.1-.6-.2-1-.2-2.2 0-4 1.8-4 4 0 .3.1.6.2.8C5.2 9.5 3.5 11 3.5 13c0 2.2 1.8 4 4 4h12c1.7 0 3-1.3 3-3 0-1.7-1.3-3-2.5-3.9z' })),
-                    createElement('svg', { className: 'w-6 h-6 text-white/50 absolute top-0 right-2 animate-float z-0', style: { animationDelay: '1s' }, fill: 'currentColor', viewBox: '0 0 24 24' }, createElement('path', { d: 'M19 13.1c-.1 0-.3.1-.4.1-1.7 0-3-1.3-3-3 0-1.7 1.3-3 3-3 .1 0 .3 0 .4.1.7-2.6-1.5-4.7-4.1-4.7-1.7 0-3.3.9-4.1 2.3-.3-.1-.6-.2-1-.2-2.2 0-4 1.8-4 4 0 .3.1.6.2.8C5.2 9.5 3.5 11 3.5 13c0 2.2 1.8 4 4 4h12c1.7 0 3-1.3 3-3 0-1.7-1.3-3-2.5-3.9z' })),
-                    createElement('svg', { className: 'w-5 h-5 text-white/50 absolute bottom-0 right-1 animate-float z-0', style: { animationDelay: '2s' }, fill: 'currentColor', viewBox: '0 0 24 24' }, createElement('path', { d: 'M19 13.1c-.1 0-.3.1-.4.1-1.7 0-3-1.3-3-3 0-1.7 1.3-3 3-3 .1 0 .3 0 .4.1.7-2.6-1.5-4.7-4.1-4.7-1.7 0-3.3.9-4.1 2.3-.3-.1-.6-.2-1-.2-2.2 0-4 1.8-4 4 0 .3.1.6.2.8C5.2 9.5 3.5 11 3.5 13c0 2.2 1.8 4 4 4h12c1.7 0 3-1.3 3-3 0-1.7-1.3-3-2.5-3.9z' }))
+                    createElement('div', { className: 'text-4xl absolute z-10 animate-sun-flicker' }, '☀️'),
+                    createElement('div', { className: 'text-3xl absolute top-0 left-0 text-white/90 animate-cloud-drift' }, '☁️'),
+                    createElement('div', { className: 'text-2xl absolute -bottom-2 right-0 text-white/90 animate-cloud-drift', style: { animationDelay: '1s' } }, '☁️'),
+                    createElement('div', { className: 'text-xl absolute -top-2 right-4 text-white/90 animate-cloud-drift', style: { animationDelay: '2s' } }, '☁️')
                 )
             );
         }
@@ -81,22 +84,22 @@
         function LiveProgram() {
             return createElement('div', { 
                 onClick: () => window.open('https://www.maspero.eg/stream/11', '_blank'),
-                className: 'bg-gradient-to-l from-indigo-900 to-purple-800 mx-3 my-4 p-3 rounded-2xl border-2 border-white shadow-lg relative cursor-pointer active-scale animate-border-glow' 
+                className: 'bg-gradient-to-l from-green-900 to-emerald-800 mx-3 my-4 p-3 rounded-2xl border-2 border-white shadow-lg relative cursor-pointer active-scale animate-border-glow' 
             },
-                createElement('div', { className: 'absolute -top-3 right-4 bg-red-600 text-white text-[9px] px-2 py-0.5 rounded-full font-bold flex items-center gap-1 shadow-md animate-live-pulse' },
-                    createElement('div', { className: 'w-1.5 h-1.5 bg-white rounded-full' }),
-                    'مباشر الآن'
+                createElement('div', { className: 'absolute -top-3 right-4 bg-red-600 text-white text-[9px] px-2 py-0.5 rounded font-bold shadow-md flex items-center gap-1.5' }, 
+                    'استمعوا الآن',
+                    createElement('div', { className: 'w-2 h-2 bg-white rounded-full animate-fade-pulse' })
                 ),
                 createElement('div', { className: 'flex items-center justify-between gap-2 pt-1' },
                     createElement('div', { className: 'flex-1 text-center' },
                         createElement('div', { className: 'flex items-center justify-center gap-2 font-black text-[14px] text-white leading-tight mb-1' }, 
-                            createElement('span', { className: 'text-xl' }, '🌙'),
-                            'مع السهرانين'
+                            createElement('span', { className: 'text-xl' }, '⚽'),
+                            'صباحكوا رياضة'
                         ),
-                        createElement('div', { className: 'text-[11px] text-indigo-200 font-bold bg-black/20 px-2 py-1 rounded-lg mt-1' }, 'استمع الآن.. تجارب إنسانية، حكايات الليل، ومشاركاتكم الوجدانية مع السهرانين')
+                        createElement('div', { className: 'text-[11px] text-green-200 font-bold bg-black/20 px-2 py-1 rounded-lg mt-1' }, 'استمع الآن.. كواليس المونديال، أخبار النجوم، وتحليلات المباريات مع نجوم صباحكوا رياضة')
                     ),
                     createElement('div', { className: 'flex flex-col items-center gap-0.5 border-r border-white/20 pr-2' },
-                        createElement('img', { src: 'https://i.postimg.cc/rszng3bx/123132-shr.jpg', className: 'w-10 h-10 rounded-full object-cover border-2 border-white' })
+                        createElement('img', { src: 'https://i.postimg.cc/vBGCFx5J/hq720.jpg', className: 'w-10 h-10 rounded-full object-cover border-2 border-white' })
                     )
                 )
             );
@@ -104,26 +107,25 @@
 
         function App() {
             return createElement('div', { className: 'min-h-screen flex flex-col bg-gray-50' },
-                createElement('header', { className: 'bg-blue-950 text-white p-2 shadow-lg sticky top-0 z-50 border-b-4 border-red-600' },
+                createElement('header', { className: 'bg-blue-950 text-white p-3 shadow-2xl sticky top-0 z-50 rounded-b-[2rem] pb-6' },
                     createElement('div', { className: 'flex items-center justify-between' },
-                        createElement('div', { className: 'flex items-center gap-1.5' },
-                            createElement('svg', { className: 'w-6 h-6 text-red-600 animate-mic-blink', fill: 'currentColor', viewBox: '0 0 24 24' }, createElement('path', { d: 'M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zM17 11c0 2.76-2.24 5-5 5s-5-2.24-5-5H5c0 3.53 2.61 6.43 6 6.92V21h2v-3.08c3.39-.49 6-3.39 6-6.92h-2z' })),
+                        createElement('div', { className: 'flex items-center gap-2' },
+                            createElement('div', { className: 'flex justify-center', onClick: () => window.open('https://www.maspero.eg/stream/11', '_blank') },
+                                createElement('img', { src: 'https://i.postimg.cc/85tS38Cc/Screenshot-2026-05-13-02-58-50-80-96b26121e545231a3c569311a54cda96.jpg', className: 'w-[45px] h-[45px] rounded-full border-2 border-white object-cover shadow-2xl animate-halo-pulse cursor-pointer' })
+                            ),
                             createElement('div', { className: 'whitespace-nowrap' }, 
-                                createElement('h1', { className: 'font-black text-[13px] tracking-tight' }, 'إذاعة الشباب والرياضة'), 
-                                createElement('div', { className: 'text-yellow-400 text-[10px] font-bold' }, '108 FM')
+                                createElement('h1', { className: 'font-black text-[14px] tracking-tight' }, 'إذاعة الشباب والرياضة'), 
+                                createElement('div', { className: 'text-yellow-400 text-[11px] font-bold' }, '108 FM')
                             )
                         ),
-                        createElement('div', { className: 'flex justify-center', onClick: () => window.open('https://www.maspero.eg/stream/11', '_blank') },
-                            createElement('img', { src: 'https://i.postimg.cc/85tS38Cc/Screenshot-2026-05-13-02-58-50-80-96b26121e545231a3c569311a54cda96.jpg', className: 'w-14 h-14 rounded-full border-2 border-white object-cover shadow-2xl animate-halo-pulse cursor-pointer' })
-                        ),
-                        createElement('div', { className: 'flex items-center gap-3' },
-                            createElement('a', { href: 'https://www.facebook.com/share/1bzDzdVHfh/', target: '_blank', className: 'hover:opacity-80 transition-opacity' }, 
-                                createElement('img', { src: 'https://i.postimg.cc/B61C0pPF/images.png', className: 'w-9 h-9 rounded-full object-cover border border-white/20' })
-                            ),
-                            createElement('a', { href: 'https://www.maspero.eg/stream/11', target: '_blank', className: 'relative bg-yellow-500 text-blue-950 px-2 py-1 rounded-full text-[9px] font-bold active-scale flex items-center gap-1' }, 
+                        createElement('div', { className: 'flex items-center gap-2' },
+                            createElement('a', { href: 'https://www.maspero.eg/stream/11', target: '_blank', className: 'relative bg-yellow-500 text-blue-950 px-2 py-0.5 rounded-full text-[8px] font-bold active-scale flex items-center gap-1' }, 
                                 createElement('svg', { className: 'w-3 h-3 text-red-600 fill-current animate-play-blink', viewBox: '0 0 24 24' }, createElement('path', { d: 'M8 5v14l11-7z' })),
                                 'استمع الآن',
                                 createElement('div', { className: 'absolute -inset-1 rounded-full border border-yellow-400 animate-soft-pulse' })
+                            ),
+                            createElement('a', { href: 'https://www.facebook.com/share/1bzDzdVHfh/', target: '_blank', className: 'hover:opacity-80 transition-opacity' }, 
+                                createElement('img', { src: 'https://i.postimg.cc/B61C0pPF/images.png', className: 'w-6 h-6 rounded-full object-cover border border-white/20' })
                             )
                         )
                     )
@@ -157,4 +159,5 @@
     </script>
 </body>
 </html>
+
 
