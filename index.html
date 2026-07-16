@@ -44,29 +44,13 @@
     <script>
         const { createElement } = React;
         const allNews = [
+            { id: 29, title: "إيمان رمضان تناقش إنجازات الأثقال وتستضيف حاتم عسكر ببرنامج «استفتاء على الهواء»", program: "استفتاء على الهواء", image: "https://i.postimg.cc/kGKNy7bR/FB-IMG-1726403850008-1024x498.jpg", time: "16 يوليو 2026 - 02:00 م", link: "https://estifta3a.vercel.app" },
             { id: 28, title: "أحمد عوض يوضح عبر «ربيع القلوب» أهمية استثمار الوقت ويحذر من التسويف", program: "ربيع القلوب", image: "https://i.postimg.cc/bvDdvBY8/hq720-(1).jpg", time: "16 يوليو 2026 - 04:15 ص", link: "https://kloob-tawny.vercel.app" },
             { id: 27, title: "خالد عبد اللطيف يستعرض مسيرة ابن منظور وابن هشام ببرنامج «الموسوعة المسموعة»", program: "الموسوعة المسموعة", image: "https://i.postimg.cc/wTyXS0JV/images-(9).jpg", time: "16 يوليو 2026 - 04:10 ص", link: "https://mowso3a.vercel.app" },
             { id: 26, title: "الأباصيري يستعرض ابتكار طلاء يبرد المنازل ويجمع المياه وأسرار رواتب رواد الفضاء ببرنامج «راديو تويت»", program: "راديو تويت", image: "https://i.postimg.cc/MZhMjxMd/images-(8).jpg", time: "16 يوليو 2026 - 04:00 ص", link: "https://radiotweet-chi.vercel.app" },
             { id: 25, title: "محمد رضا الفقي يحذر عبر «واو وعي» من خطورة الشجارات الزوجية أمام الأطفال", program: "واو وعي", image: "https://i.postimg.cc/jdgH1BLW/images-(7).jpg", time: "16 يوليو 2026 - 03:30 ص", link: "https://feky.vercel.app" },
             { id: 24, title: "شيماء عبد الوهاب تناقش التخلص من العلاقات السامة والتسويف ببرنامج «مع السهرانين»", program: "مع السهرانين", image: "https://i.postimg.cc/brVCYrNg/Screenshot-2026-07-16-02-56-56-57-680d03679600f7af0b4c700c6b270fe7.jpg", time: "16 يوليو 2026 - 03:00 ص", link: "https://ma3asahraneen.vercel.app" },
-            { id: 23, title: "حنان حسين تكشف لـ «بنات أفكاري» أسباب تراجع اللغة العربية وتحذر من زيف السوشيال ميديا", program: "بنات أفكاري", image: "https://i.postimg.cc/hGhGh3r7/00-2-1734526221.jpg", time: "16 يوليو 2026 - 02:50 ص", link: "https://banaatafkary.vercel.app" },
-            { id: 22, title: "إسلام نبيل يسخر من محتوى «التريند» المفرغ وفيديوهات المؤثرين ببرنامج «كوميكس»", program: "كوميكس", image: "https://images.copts-united.com/uploads/4082/77_20200505175013.jpg", time: "16 يوليو 2026 - 02:20 ص", link: "https://trend2-three.vercel.app" },
-            { id: 21, title: "عمر هشام وعماد غنيم يحللان لـ «إنسايد استوديو» أسباب خروج الفراعنة وسر تفوق إسبانيا وفرص إنجلترا بالمونديال", program: "إنسايد استوديو", image: "https://i.postimg.cc/XJYjCBLt/sddefault.jpg", time: "16 يوليو 2026 - 12:35 ص", link: "https://omarhesham.vercel.app" },
-            { id: 20, title: "حنان رمسيس تكشف لـ «المؤشر» أسباب القفزة التاريخية للاحتياطي النقدي وتحذر من فخ العملات المشفرة", program: "المؤشر", image: "https://mediaaws-live.almasryalyoum.com/AMAYLivePictures/portalimages/news/large/2023/08/16/2176174_0.jpeg", time: "16 يوليو 2026 - 12:10 ص", link: "https://hananramsis.vercel.app" },
-            { id: 19, title: "انتصار غريب تكشف كواليس تشكيل الوفد المصري وثورة 19 وموقف سعد زغلول من الأقباط ببرنامج «قول يا تاريخ»", program: "قول يا تاريخ", image: "https://www.cairo24.com/UploadCache/libfiles/70/1/600x338o/544.jpg", time: "15 يوليو 2026 - 11:55 م", link: "https://qoolyatarikh.vercel.app" },
-            { id: 18, title: "نادية النشار ووائل عيسى يستعرضان إنجازات الفراعنة بأمم إفريقيا وقصة كفاح لتجاوز أزمات العمل ببرنامج «Lifestyle»", program: "Lifestyle", image: "https://www.emaratalyoum.com/polopoly_fs/1.1336547.1587202967!/image/image.jpeg", time: "15 يوليو 2026 - 09:50 م", link: "https://lifestyle-indol.vercel.app" },
-            { id: 17, title: "علاء صلاح يكشف أسرار اختبار MBTI وأنماط الشخصيات لتحقيق النجاح ببرنامج «للسعادة طاقة»", program: "للسعادة طاقة", image: "https://i.postimg.cc/wvLnVJRf/anwaʿ-alshkhsyat-fy-ʿlm-alnfs.jpg", time: "15 يوليو 2026 - 08:30 م", link: "https://sa3ada.vercel.app" },
-            { id: 16, title: "راندا فاروق تستعرض تفاصيل فيلم «فرقة الموت» وأحدث الأخبار والمهرجانات الفنية", program: "108 فن", image: "https://i.postimg.cc/3xsdBY2g/images-(6).jpg", time: "15 يوليو 2026 - 10:15 ص", link: "https://randafarouk.vercel.app/" },
-            { id: 15, title: "محمد عادل يكشف أسلحة توخيل لإسقاط الأرجنتين وسر اعتماد سكالوني على ميسي بنصف نهائي المونديال", program: "صباحكم رياضة", image: "https://i.postimg.cc/vBGCFx5J/hq720.jpg", time: "15 يوليو 2026 - 10:05 ص", link: "https://mohamedadel-ecru.vercel.app/" },
-            { id: 14, title: "«صباحكم رياضة» يستعرض فوز إسبانيا على فرنسا ومواجهة إنجلترا والأرجنتين بمونديال 2026", program: "صباحكم رياضة", image: "https://i.postimg.cc/J0VLf2YR/large.jpg", time: "15 يوليو 2026 - 09:55 ص", link: "https://sabahkomryadh.vercel.app/" },
-            { id: 13, title: "أمير سعد يكشف كواليس أزمة القيد بالزمالك ومصير المدرب الأجنبي وتفاصيل احتراف عبد المجيد", program: "صباحكم رياضة", image: "https://i.postimg.cc/X7jKf7xf/images-(5).jpg", time: "15 يوليو 2026 - 09:45 ص", link: "https://amirsad-roan.vercel.app/" },
-            { id: 12, title: "عيد فؤاد يكشف كواليس رحيل تريزيجيه ومصير أجانب الأهلي وحظوظ إنجلترا بالمونديال", program: "صباحكم رياضة", image: "https://i.postimg.cc/85fMC712/images-(4).jpg", time: "15 يوليو 2026 - 09:30 ص", link: "https://eidfouad.vercel.app/" },
-            { id: 11, title: "محمد عبد المقصود: الدعاء يرفع البلاء.. والرضا بقضاء الله مفتاح الفرج والرحمة", program: "ربيع القلوب", image: "https://i.postimg.cc/HLGd7DnY/images.jpg", time: "15 يوليو 2026 - 05:00 ص", link: "https://rabeakloob.vercel.app/" },
-            { id: 10, title: "«الموسوعة المسموعة» يستعرض معلومات جغرافية عن السنغال وباقة من الحكم والأقوال المأثورة", program: "الموسوعة المسموعة", image: "https://i.postimg.cc/pXtfkySf/Adobe-Stock-67783341-scaled.jpg", time: "15 يوليو 2026 - 04:30 ص", link: "https://mawso3a-delta.vercel.app/" },
-            { id: 9, title: "مروة عادل: قانون الخدمة المدنية يحدد واجبات الموظف.. والعمل التطوعي للزملاء يحمل صاحبه المسؤولية", program: "واو وعي", image: "https://i.postimg.cc/02f83HVp/17612478700.jpg", time: "15 يوليو 2026 - 04:00 ص", link: "https://marwaadel.vercel.app/" },
-            { id: 8, title: "«راديو Tweet» يستعرض تأثير العواصف الشمسية وتاريخ بورصة القطن ومكاسب العرب بالمونديال", program: "راديو Tweet", image: "https://i.postimg.cc/B6VFxnK0/208363.jpg", time: "15 يوليو 2026 - 03:00 ص", link: "https://radiotweet.vercel.app/" },
-            { id: 7, title: "«مع السهرانين» يواصل مناقشة تقلبات المزاج.. ومستمعون يشاركون تجاربهم الإنسانية المؤثرة", program: "مع السهرانين", image: "https://i.postimg.cc/rszng3bx/123132-shr.jpg", time: "15 يوليو 2026 - 02:40 ص", link: "https://ma3asahranin.vercel.app/" },
-            { id: 6, title: "ولاء العبد: هناك فجوة واضحة بين المناهج وسوق العمل.. والتوأمة الإجبارية هي الحل", program: "الرياضة في أروقة الجامعة", image: "https://i.postimg.cc/VvNBmtBn/61Hh8cw-Qo-YL-AC-UF1000-1000-QL80.jpg", time: "15 يوليو 2026 - 02:00 ص", link: "https://walaaelabd.vercel.app/" }
+            { id: 23, title: "حنان حسين تكشف لـ «بنات أفكاري» أسباب تراجع اللغة العربية وتحذر من زيف السوشيال ميديا", program: "بنات أفكاري", image: "https://i.postimg.cc/hGhGh3r7/00-2-1734526221.jpg", time: "16 يوليو 2026 - 02:50 ص", link: "https://banaatafkary.vercel.app" }
         ];
 
         function WeatherSeparator() {
@@ -176,3 +160,4 @@
     </script>
 </body>
 </html>
+
