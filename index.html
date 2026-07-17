@@ -52,6 +52,11 @@
     <script>
         const { createElement } = React;
         const allNews = [
+            { id: 44, title: "نفحات روحانية ومدائح نبوية في أحدث حلقات برنامج «كلام قد المقام»", program: "كلام قد المقام", image: "https://upload.wikimedia.org/wikipedia/commons/e/e6/Kaaba_Mirror_like.jpg", time: "17 يوليو 2026 - 03:15 م", link: "https://maqam-iota.vercel.app" },
+            { id: 43, title: "«ربيع القلوب» يكشف أسرار ولاية الله لعباده.. وشروط الوصول لمرتبة المتقين", program: "ربيع القلوب", image: "https://yt3.googleusercontent.com/CDv-LWdNYqYi78Z1dq6g2NmYAGT5-Faqmau4IhCkzqGnGg5s_5Bwd__WX-sOUdAYyE5s79-ZKOA=s900-c-k-c0x00ffffff-no-rj", time: "17 يوليو 2026 - 03:10 م", link: "https://qoloob.vercel.app" },
+            { id: 42, title: "أسرار الفلك والزراعة في «الموسوعة المسموعة».. ابن يونس مخترع البندول وأقدم علم في العالم", program: "الموسوعة المسموعة", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5CRfSuoS9l8CjAQByxEAZJCkYgxpQE2WyExd17F_U1w&s=10", time: "17 يوليو 2026 - 03:00 م", link: "https://maws03a.vercel.app" },
+            { id: 41, title: "عبر «واو وعي».. المستشارة مروة عادل تكشف الوجه القانوني لمخالفات الموظفين وتصحح الصورة النمطية", program: "واو وعي", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROZ24Bla9HIhCM1gfbhpF3pBKSbnQWpclHJwlgaS9Ea8-tx4WOr9f-gLc&s=10", time: "17 يوليو 2026 - 02:55 م", link: "https://wawway.vercel.app/" },
+            { id: 40, title: "ببرنامج «مع السهرانين».. طبيب يرفض الكتمان ومستمعون يحذرون من غدر الأصدقاء", program: "مع السهرانين", image: "https://img.youm7.com/ArticleImgs/2019/6/29/223424-%D8%A7%D9%84%D8%B3%D9%87%D8%B1.jpg", time: "17 يوليو 2026 - 02:30 م", link: "https://sahranin.vercel.app/" },
             { id: 39, title: "ببرنامج «ساعة رياضة».. مصطفى بوسي يطالب بعودة مدرسة الموهوبين ويشيد بتنظيم الأهلي للمونديال", program: "ساعة رياضة", image: "https://i.ytimg.com/vi/iu5Y8fNpGhw/maxresdefault.jpg", time: "17 يوليو 2026 - 12:45 ص", link: "https://mostafabosy.vercel.app/" },
             { id: 38, title: "«قول ياتاريخ» يكشف المستور.. مصر تحملت نفقات بريطانيا بالحرب العالمية وتنكر الإنجليز فجر ثورة 1919", program: "قول ياتاريخ", image: "https://upload.wikimedia.org/wikipedia/commons/3/38/Demonstration_in_Egypt_in_1919_%28Crescent%2C_the_Cross_and_Star_of_David%29.jpg", time: "17 يوليو 2026 - 12:40 ص", link: "https://qoolyatarikh-two.vercel.app/" },
             { id: 37, title: "«لايف ستايل»: الرياضة طوق النجاة للخلافات الزوجية.. وخضر التوني أسطورة مصرية أذهلت هتلر", program: "لايف ستايل", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwE9xpxyz__HcyJepOFVwDQ0ORj-IryGAnIpSH7zov1Z0ESqBluPFuva77&s=10", time: "17 يوليو 2026 - 12:35 ص", link: "https://khedrtony.vercel.app/" },
@@ -92,10 +97,10 @@
             return createElement('div', { className: 'bg-sky-500 mx-3 my-4 p-4 rounded-2xl shadow-lg flex items-center justify-between border-[2px] border-sky-400 overflow-hidden relative animate-weather-pulse' },
                 createElement('div', { className: 'flex flex-col items-center relative z-10' },
                     createElement('div', { className: 'bg-white/20 text-white text-[10px] px-2 py-0.5 rounded-lg border border-white/20 shadow-inner mb-1 font-bold whitespace-nowrap animate-tag-blink' }, 'الطقس الآن'),
-                    createElement('div', { className: 'text-4xl font-black text-white mt-0.5' }, '31°')
+                    createElement('div', { className: 'text-4xl font-black text-white mt-0.5' }, '32°')
                 ),
                 createElement('div', { className: 'h-10 w-[1px] bg-white/30 mx-3' }),
-                createElement('div', { className: 'text-white font-bold text-sm whitespace-nowrap flex-grow text-right' }, 'حار نهارًا'),
+                createElement('div', { className: 'text-white font-bold text-sm whitespace-nowrap flex-grow text-right' }, 'مشمس نهارًا'),
                 createElement('div', { className: 'relative w-24 h-16 flex items-center justify-center' },
                     createElement('div', { className: 'w-12 h-12 rounded-full bg-yellow-400 absolute z-20 animate-sun-disk-glow' }),
                     createElement('div', { className: 'text-2xl absolute -bottom-2 right-0 text-white/50 animate-cloud-drift', style: { animationDelay: '0s' } }, '☁️'),
@@ -147,8 +152,8 @@
                         createElement('span', { className: 'text-2xl' }, '🎙️')
                     ),
                     createElement('div', { className: 'flex flex-col justify-center' },
-                        createElement('div', { className: 'text-[14px] font-black text-gray-900 leading-tight' }, 'نقل مباشر لصلاة الجمعة'),
-                        createElement('div', { className: 'text-[9px] text-gray-500 font-bold mt-0.5' }, 'تقبل الله منا ومنكم صالح الأعمال')
+                        createElement('div', { className: 'text-[14px] font-black text-gray-900 leading-tight' }, 'مع ولا ضد'),
+                        createElement('div', { className: 'text-[9px] text-gray-500 font-bold mt-0.5' }, 'مع الإعلامية نجلاء حلمي')
                     )
                 ),
                 createElement('div', { className: 'bg-green-600 text-white text-[9px] font-black px-3 py-1.5 rounded-full shadow-md flex items-center gap-1 whitespace-nowrap' },
