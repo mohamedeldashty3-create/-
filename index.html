@@ -188,7 +188,7 @@
                     allNews.map((news, index) => createElement('div', { key: news.id },
                         createElement('div', { 
                             onClick: () => window.open(news.link, '_blank'), 
-                            className: 'bg-white p-3 rounded-2xl mb-3 shadow-sm flex items-center gap-3 active-scale cursor-pointer' 
+                            className: 'bg-white p-3 rounded-2xl mb-3 shadow-sm flex items-center gap-3 active-scale cursor-pointer border border-gray-200' 
                         },
                             createElement('div', { className: 'relative p-0.5 rounded-full animate-red-ring-pulse' },
                                 createElement('img', { src: news.image, className: 'w-14 h-14 rounded-full object-cover', referrerPolicy: 'no-referrer' })
@@ -218,3 +218,4 @@
 </body>
 </html>
 
+ 
