@@ -71,16 +71,17 @@
     <div id="root"></div>
     <script>
         const { createElement, useState, useEffect, useRef } = React;
-        const mainNews = { id: 100, title: "سياسة مالية لتقليص الرواتب وموقف حاسم لعموتة من رحيل نجوم الأهلي عبر «يحدث هذا الأسبوع»", program: "يحدث هذا الأسبوع", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdum4K_Q-woQJcFGWoWgqHSOkaC2rNqn30Crv3_fIRBK6x9GK9C3INX_s&s=10", time: "18 يوليو 2026 - 02:45 م", link: "https://yahdothhazaesbo3a.vercel.app" };
+        const mainNews = { id: 55, title: "«يحدث هذا الأسبوع» يكشف كواليس القلعة البيضاء.. احتراف عبد المجيد وأزمة الجزيري ومصير القيد", program: "يحدث هذا الأسبوع", image: "https://mediaaws-live.almasryalyoum.com/almasryalyoum/uploads/images/2026/06/10/thumbs/600x600/1832448.jpg", time: "18 يوليو 2026 - 03:00 م", link: "https://86545235582.vercel.app" };
         
         const allNews = [
             mainNews,
-            { id: 53, title: "مخططات التقسيم وحروب العقول.. مصطفى بكري يفتح قلبه في «من سيربح الميكروفون»", program: "من سيربح الميكروفون", image: "https://yaf.ps/file/attachs/2131.jpg", time: "18 يوليو 2026 - 02:40 ص", link: "https://mostafabakry.vercel.app" },
-            { id: 50, title: "شيف المنتخب الوطني يكشف أسرار مطبخ الفراعنة وعقاب محمد صلاح الصارم لنفسه", program: "الا الكورة", image: "https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2025/10/05/images/311406.jpg", time: "17 يوليو 2026 - 08:25 م", link: "https://montkhab.vercel.app" }
+            { id: 100, title: "سياسة مالية لتقليص الرواتب وموقف حاسم لعموتة من رحيل نجوم الأهلي عبر «يحدث هذا الأسبوع»", program: "يحدث هذا الأسبوع", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdum4K_Q-woQJcFGWoWgqHSOkaC2rNqn30Crv3_fIRBK6x9GK9C3INX_s&s=10", time: "18 يوليو 2026 - 02:45 م", link: "https://yahdothhazaesbo3a.vercel.app" },
+            { id: 53, title: "مخططات التقسيم وحروب العقول.. مصطفى بكري يفتح قلبه في «من سيربح الميكروفون»", program: "من سيربح الميكروفون", image: "https://yaf.ps/file/attachs/2131.jpg", time: "18 يوليو 2026 - 02:40 ص", link: "https://mostafabakry.vercel.app" }
         ];
 
         const listNews = [
             mainNews,
+            { id: 100, title: "سياسة مالية لتقليص الرواتب وموقف حاسم لعموتة من رحيل نجوم الأهلي عبر «يحدث هذا الأسبوع»", program: "يحدث هذا الأسبوع", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdum4K_Q-woQJcFGWoWgqHSOkaC2rNqn30Crv3_fIRBK6x9GK9C3INX_s&s=10", time: "18 يوليو 2026 - 02:45 م", link: "https://yahdothhazaesbo3a.vercel.app" },
             { id: 54, title: "أرق الصيف وقلق الامتحانات وظلم البشر.. «مع السهرانين» يفتح ملف أسباب طيران النوم", program: "مع السهرانين", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnG4nf974IWmwzqb3PFMKsDXZQQMUVStLbJvqZJjgtYkUICRHIGhKLDjY&s=10", time: "18 يوليو 2026 - 02:50 ص", link: "https://shranin2.vercel.app" },
             { id: 53, title: "مخططات التقسيم وحروب العقول.. مصطفى بكري يفتح قلبه في «من سيربح الميكروفون»", program: "من سيربح الميكروفون", image: "https://yaf.ps/file/attachs/2131.jpg", time: "18 يوليو 2026 - 02:40 ص", link: "https://mostafabakry.vercel.app" },
             { id: 52, title: "أسرار مقطوعة «أحبك» التركية تتصدر المشهد في «صوت الموسيقى» مع علا صلاح", program: "صوت الموسيقى", image: "https://www.chosic.com/wp-content/uploads/2019/11/Omar-Faruk-Tekbilek-2.jpg", time: "18 يوليو 2026 - 01:40 ص", link: "https://soundmusic-nine.vercel.app" },
