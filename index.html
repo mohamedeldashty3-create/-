@@ -65,6 +65,8 @@
         .animate-moon-blink { animation: moon-blink 3s infinite ease-in-out; }
         @keyframes slow-fade { 0%, 100% { opacity: 0.3; } 50% { opacity: 1; } }
         .animate-slow-fade { animation: slow-fade 4s infinite ease-in-out; }
+        @keyframes strong-breath { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        .animate-strong-breath { animation: strong-breath 2s ease-in-out infinite; }
     </style>
 </head>
 <body class="bg-gray-50">
@@ -121,6 +123,7 @@
         ];
 
         const listNews = [
+            { id: 106, title: "في «صباحكوا رياضة».. الناقد الرياضي رامي رجب يكشف كواليس أزمة هيثم حسن واقتراب شوقي غريب من منصب المدير الفني", program: "صباحكوا رياضة", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO913GXvjz9kJgllyd7z_vkjzHtBqQdrx44gDdzcF2WmzRM4nPXeR_j70&s=10", time: "19 يوليو 2026 - 10:00 ص", link: "https://2486173.vercel.app" },
             newNews,
             newNews2,
             oldNews1,
@@ -226,7 +229,7 @@
 
         function PrayerImage() {
             return createElement('div', { className: 'mx-3 my-4' },
-                createElement('div', { className: 'w-full rounded-2xl shadow-lg border-[2px] overflow-hidden animate-elegant-pulse' },
+                createElement('div', { className: 'w-full rounded-2xl shadow-lg border-[2px] overflow-hidden animate-elegant-pulse animate-strong-breath' },
                     createElement('img', { 
                         src: 'https://i.postimg.cc/h4s8V4z5/Screenshot-2026-07-19-09-00-16-53-d14d75c637e96dca0c3ab8579c453693.jpg', 
                         className: 'w-full h-auto', 
@@ -322,4 +325,3 @@
     </script>
 </body>
 </html>
-
